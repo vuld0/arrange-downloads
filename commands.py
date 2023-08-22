@@ -6,8 +6,9 @@ def current_dir():
     return os.getcwd()
 
 
+# ! Don't forget to add downloads path here -
 def change_dir_to_downloads():
-    os.chdir(r"/mnt/c/Users/sach9/Downloads")
+    os.chdir(r"{add your downloads path here}")
     return os.getcwd()
 
 
