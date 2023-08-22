@@ -1,4 +1,8 @@
 import commands
+import banner
+
+# Printing the banner
+banner.script_banner()
 
 # let's get to the Downloads folder
 current_dir = commands.change_dir_to_downloads()
