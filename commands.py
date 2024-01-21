@@ -8,7 +8,7 @@ def current_dir():
 
 # ! Don't forget to add downloads path here -
 def change_dir_to_downloads():
-    os.chdir(r"{add your downloads path here}")
+    os.chdir(r"/mnt/c/Users/sach9/Downloads")
     return os.getcwd()
 
 
@@ -33,39 +33,39 @@ def get_files_with_extensions(dir_list):
     return file_extensions
 
 
-def make_directory(directory_name, path):
-    if os.path.exists(path) and os.path.isdir(path + '/' + directory_name):
-        print(f"The directory {directory_name} already exists")
-    else:
-        os.mkdir(directory_name)
-        print(f"The directory {directory_name} has been created")
+# def make_directory(directory_name, path):
+#     if os.path.exists(path) and os.path.isdir(path + '/' + directory_name):
+#         print(f"The directory {directory_name} already exists")
+#     else:
+#         os.mkdir(directory_name)
+#         print(f"The directory {directory_name} has been created")
 
-    return directory_name
+#     return directory_name
 
 
 def move_files(files):
     # let's define the categories of the files first
-    doc_files = ('.doc', '.docx', '.txt', '.pdf', '.xls', '.ppt', '.xlsx', '.pptx', '.md', '.csv')
+    doc_files = ('.doc', '.docx', '.txt', '.pdf', '.xls', '.ppt', '.xlsx', '.pptx', '.md', '.csv', '.TXT')
     img_files = ('.jpg', '.jpeg', '.png', '.svg', '.gif', '.tif', '.tiff', '.HEIC', '.JPG')
     software_files = ('.exe', '.pkg', '.dmg')
-    vid_files = ('.MP4', '.MOV')
+    vid_files = ('.MP4', '.MOV', '.mp4')
     zip_files = '.zip'
 
     # moving the files using the shutil module:
     for file in files:
         if file.endswith(doc_files):
+            print(f"Moving {file} to documents")
             move(file, change_dir_to_downloads() + "/documents")
-            print("Files moved to documents")
         elif file.endswith(img_files):
+            print(f"Moving {file} to images")
             move(file, change_dir_to_downloads() + "/images")
-            print("Files moved to images")
         elif file.endswith(software_files):
+            print(f"Moving {file} to softwares")
             move(file, change_dir_to_downloads() + "/softwares")
-            print("Files moved to images")
         elif file.endswith(vid_files):
+            print(f"Moving {file} to videos")
             move(file, change_dir_to_downloads() + '/videos')
-            print("Files moved to videos")
         elif file.endswith(zip_files):
+            print(f"Moving {file} to zips")
             move(file, change_dir_to_downloads() + '/zips')
-            print("Files moved to zips")
     return "files moved!!"

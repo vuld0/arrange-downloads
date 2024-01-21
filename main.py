@@ -19,8 +19,8 @@ file_extensions = commands.get_files_with_extensions(dir_list)
 # create the directory for the files
 list_of_directories = ["images", "softwares", "videos", "documents", "zips"]
 
-for directory in list_of_directories:
-    commands.make_directory(directory, commands.current_dir())
+# for directory in list_of_directories:
+#     commands.make_directory(directory, commands.current_dir())
 
 commands.move_files(dir_list)
 
